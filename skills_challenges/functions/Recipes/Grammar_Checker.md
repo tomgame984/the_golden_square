@@ -38,6 +38,7 @@ _Make a list of examples of what the function will take and return._
 ```python
 # EXAMPLE
 
+def test_given_text_with_capital_and_full_stop():
 """
 Given a text string starting with a capital letter and ending with a full stop
 It returns:
@@ -48,6 +49,7 @@ grammar_check("Hello world.") =>
     'Capital Letter: True'
     'End of sentence punctuation:  True'
 
+def test_given_text_with_capital_but_no_full_stop():
 """
 Given a text string starting with a capital letter and missing a full stop
 It returns:
@@ -58,6 +60,7 @@ grammar_check("Hello world") =>
     'Capital Letter: True'
     'End of sentence punctuation:  False'
 
+def test_given_lowercase_first_letter_and_full_stop():
 """
 Given a text string starting with lowercase letter and ending with a full stop
 It returns:
@@ -68,6 +71,7 @@ grammar_check("hello world.") =>
     'Capital Letter: False'
     'End of sentence punctuation:  True'
 
+def test_given_lowercase_first_letter_and_no_full_stop():
 """
 Given a text string starting with lowercase letter and ending without any punctuation.
 It returns:
@@ -78,6 +82,7 @@ grammar_check("hello world") =>
     'Capital Letter: False'
     'End of sentence punctuation:  False'
 
+def test_given_text_with_capital_and_with_accepted_punctuation():
 """
 Given a text string starting with a capital letter and ending with acceptable punctuation.
 It returns:
@@ -88,6 +93,7 @@ grammar_check("Hello world!") =>
     'Capital Letter: True'
     'End of sentence punctuation:  True'
 
+def test_given_text_without_capital_and_incorrect_punctuation():
 """
 Given a text string starting without a capital letter and ending incorrect punctuation.
 It returns:
