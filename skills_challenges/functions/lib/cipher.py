@@ -1,6 +1,4 @@
-def say_hello(name):
-    return f"hello {name}"
-
+## EXERCISE 2:
 def encode(text, key):
     cipher = make_cipher(key)
 
@@ -24,7 +22,8 @@ def decode(encrypted, key):
 
 
 def make_cipher(key):
-    alphabet = [chr(i + 98) for i in range(1, 26)]
+    alphabet = [chr(i + 96) for i in range(1, 27)]
+    print(alphabet)
     cipher_with_duplicates = list(key) + alphabet
 
     cipher = []
@@ -47,5 +46,3 @@ print(f"""
 Expected: theswiftfoxjumpedoverthelazydog
   Actual: {decode('EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL', 'secretkey')}
 """)
-
-
