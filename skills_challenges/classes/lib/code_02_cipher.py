@@ -1,4 +1,3 @@
-## EXERCISE 2:
 def encode(text, key):
     cipher = make_cipher(key)
 
@@ -15,15 +14,14 @@ def decode(encrypted, key):
 
     plaintext_chars = []
     for i in encrypted:
-        plain_char = cipher[65 - ord(i)]
+        plain_char = cipher[ord(i) - 65]
         plaintext_chars.append(plain_char)
 
     return "".join(plaintext_chars)
 
 
 def make_cipher(key):
-    alphabet = [chr(i + 96) for i in range(1, 27)]
-    print(alphabet)
+    alphabet = [chr(i + 97) for i in range(0, 26)]
     cipher_with_duplicates = list(key) + alphabet
 
     cipher = []
