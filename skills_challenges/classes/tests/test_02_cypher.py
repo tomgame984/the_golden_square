@@ -1,12 +1,5 @@
-from lib.say_hello import *
+from lib.code_02_cipher import *
 
-# Intended output:
-#
-# > say_hello("kay")
-# => "hello kay"
-
-def test_name_output():
-    assert say_hello("kay") == "hello kay"
 
 def test_encode():
     encoded = encode("theswiftfoxjumpedoverthelazydog", "secretkey")
