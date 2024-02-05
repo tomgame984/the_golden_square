@@ -58,7 +58,6 @@ _Make a list of examples of how the class will behave in different situations._
 
 ``` python
 
-
 def test_empty_task_list():
 """
 Given no tasks added
@@ -67,7 +66,7 @@ Return a message "No tasks outstanding"
 users_tasks = Task_Manager()
 user_tasks.open_tasks() # => "No tasks outstanding"
 
-
+def test_single_task_add_return_task_list():
 """
 Given a single new task is add
 Return a list with the task
@@ -76,8 +75,7 @@ users_tasks = Task_Manager()
 user_tasks.add_task("Walk the dog")
 user_tasks.open_tasks() # => ["Walk the dog"]
 
-
-
+def test_duplicate_task_added_return_error_message():
 """
 Given a single duplicate task is add
 Return a message that the task already exists.
@@ -87,6 +85,7 @@ user_tasks.add_task("Walk the dog")
 user_tasks.add_task("Walk the dog")
 user_tasks.open_tasks() # => "This task already exists"
 
+def test_multiple_new_tasks_added_return_list():
 """
 Given multi new tasks added
 Return a list with the task
@@ -97,6 +96,20 @@ user_tasks.add_task("Cook dinner")
 user_tasks.add_task("Finish coding challenge")
 user_tasks.open_tasks() # => ["Walk the dog", "Cook dinner", "Finish coding challenge"]
 
+def test_multiple_new_tasks_with_multiple_duplicates_added_return_list():
+"""
+Give multiple new tasks added with multiple duplicates included
+Return list without duplicate tasks included.
+"""
+user_tasks = Task_Manager()
+user_tasks.add_task("Walk the dog")
+user_tasks.add_task("Cook dinner")
+user_tasks.add_task("Walk the dog")
+user_tasks.add_task("Finish coding challenge")
+user_tasks.add_task("Cook dinner")
+user_tasks.open_tasks() => ["Walk the dog", "Cook dinner", "Finish coding challenge"]
+
+def test_delete_one_task_from_list_return_amended_list():
 """
 Given one item for the list is deleted
 Return a list without out the deleted task included.
@@ -107,7 +120,7 @@ user_tasks.add_task("Cook dinner")
 user_tasks.complete_task("Walk the dog")
 user_tasks.open_tasks() # => ["Cook dinner"]
 
-
+def test_delete_only_item_from_list_return_message():
 """
 Given the only item in the list is deleted
 Return a message, "No outstanding tasks"
@@ -117,6 +130,7 @@ user_tasks.add_task("Walk the dog")
 user_tasks.complete_task("Walk the dog")
 user_tasks.open_tasks() # => "No outstanding tasks"
 
+def test_delete_multiple_tasks_from_list_return_amended_list():
 """
 Given multi tasks are deleted
 Return a list with the task
@@ -130,6 +144,7 @@ user_tasks.complete_task("Watch TV")
 user_tasks.complete_task("Cook dinner")
 user_tasks.open_tasks() # => ["Finish coding challenge"]
 
+def test_delete_one_task_that_does_not_exist_return_error_and_amended_list():
 """
 Given user tries to delete one item that isn't in list.
 Return a message "This task does not exist" and return list of open task
