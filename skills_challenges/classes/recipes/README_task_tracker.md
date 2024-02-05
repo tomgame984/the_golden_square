@@ -57,13 +57,16 @@ class Task_Manager:
 _Make a list of examples of how the class will behave in different situations._
 
 ``` python
-# EXAMPLE
+
+
+def test_empty_task_list():
 """
 Given no tasks added
 Return a message "No tasks outstanding"
 """
 users_tasks = Task_Manager()
 user_tasks.open_tasks() # => "No tasks outstanding"
+
 
 """
 Given a single new task is add
